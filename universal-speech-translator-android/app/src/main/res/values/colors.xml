@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material You seed color -->
+    <color name="seed">#4F46E5</color>
+
+    <!-- Primary -->
+    <color name="md_theme_light_primary">#4F46E5</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#E0E0FF</color>
+    <color name="md_theme_light_onPrimaryContainer">#0F006A</color>
+
+    <!-- Secondary -->
+    <color name="md_theme_light_secondary">#0891B2</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#BDE9FF</color>
+    <color name="md_theme_light_onSecondaryContainer">#001F2A</color>
+
+    <!-- Surface -->
+    <color name="md_theme_light_background">#FAFBFF</color>
+    <color name="md_theme_light_surface">#FAFBFF</color>
+    <color name="md_theme_light_surfaceVariant">#E4E1EC</color>
+    <color name="md_theme_light_onSurface">#1B1B22</color>
+    <color name="md_theme_light_onSurfaceVariant">#47464F</color>
+
+    <!-- Error -->
+    <color name="md_theme_light_error">#BA1A1A</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+
+    <!-- Dark theme -->
+    <color name="md_theme_dark_primary">#C0C1FF</color>
+    <color name="md_theme_dark_onPrimary">#1E00A6</color>
+    <color name="md_theme_dark_primaryContainer">#3730A3</color>
+    <color name="md_theme_dark_onPrimaryContainer">#E0E0FF</color>
+
+    <color name="md_theme_dark_secondary">#61D4F0</color>
+    <color name="md_theme_dark_onSecondary">#003545</color>
+    <color name="md_theme_dark_secondaryContainer">#004D62</color>
+    <color name="md_theme_dark_onSecondaryContainer">#BDE9FF</color>
+
+    <color name="md_theme_dark_background">#0F172A</color>
+    <color name="md_theme_dark_surface">#0F172A</color>
+    <color name="md_theme_dark_surfaceVariant">#334155</color>
+    <color name="md_theme_dark_onSurface">#E4E1EC</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C8C5D0</color>
+
+    <color name="md_theme_dark_error">#FFB4AB</color>
+    <color name="md_theme_dark_onError">#690005</color>
+
+    <!-- Extras -->
+    <color name="mic_recording">#EF4444</color>
+    <color name="mic_recording_ripple">#33EF4444</color>
+</resources>

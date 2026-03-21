@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Universal Translator</string>
+    <string name="source_label">Original</string>
+    <string name="target_label">Translation</string>
+    <string name="listen_for">Listen for</string>
+    <string name="translate_to">Translate to</string>
+    <string name="auto_detect">Auto-detect</string>
+    <string name="tap_to_speak">Tap to speak</string>
+    <string name="listening">Listening…</string>
+    <string name="translating">Translating…</string>
+    <string name="speak_hint">Press the microphone and start speaking…</string>
+    <string name="translation_hint">Translation will appear here…</string>
+    <string name="swap_languages">Swap languages</string>
+    <string name="speak_translation">Speak translation</string>
+    <string name="copy_translation">Copy translation</string>
+    <string name="clear_text">Clear</string>
+    <string name="history_title">Translation History</string>
+    <string name="no_history">No translations yet</string>
+    <string name="copied">Copied to clipboard</string>
+    <string name="mic_permission_required">Microphone permission is required for speech recognition</string>
+    <string name="speech_not_available">Speech recognition is not available on this device</string>
+    <string name="translation_failed">Translation failed. Check your connection.</string>
+    <string name="downloading_model">Downloading language model…</string>
+</resources>
