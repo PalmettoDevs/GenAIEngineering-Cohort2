@@ -1,0 +1,318 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #4f46e5;
+    --primary-light: #818cf8;
+    --primary-dark: #3730a3;
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-light: #334155;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #06b6d4;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --radius: 12px;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+/* Language Controls */
+.controls {
+    display: flex;
+    align-items: end;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+.language-select {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+    max-width: 300px;
+}
+
+.language-select label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.language-select select {
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--surface-light);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.swap-btn {
+    background: var(--surface);
+    border: 1px solid var(--surface-light);
+    color: var(--text);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.swap-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Panels */
+.translator-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .translator-panels {
+        grid-template-columns: 1fr;
+    }
+    .controls {
+        flex-wrap: wrap;
+    }
+}
+
+.panel {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--surface-light);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--surface-light);
+}
+
+.panel-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.detected-lang {
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: rgba(6, 182, 212, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+}
+
+.text-area {
+    padding: 1rem;
+    min-height: 160px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text);
+    outline: none;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.text-area:empty::before {
+    content: attr(data-placeholder);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.target-panel .text-area {
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.panel-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid var(--surface-light);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.icon-btn:hover {
+    color: var(--text);
+    background: var(--surface-light);
+}
+
+/* Microphone Button */
+.mic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.mic-btn {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    background: var(--surface);
+    color: var(--primary-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.mic-btn:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+.mic-btn.listening {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: white;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 0 16px rgba(239, 68, 68, 0); }
+}
+
+.mic-status {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.mic-status.active {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+/* History */
+.history {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--surface-light);
+    padding: 1rem;
+}
+
+.history h3 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.history-item {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--bg);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.history-item .arrow {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.history-item .original {
+    color: var(--text-muted);
+}
+
+.history-item .translated {
+    color: var(--text);
+    text-align: right;
+}
+
+.history-list:empty::before {
+    content: "No translations yet";
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Interim text styling */
+.interim {
+    color: var(--text-muted);
+    font-style: italic;
+}
