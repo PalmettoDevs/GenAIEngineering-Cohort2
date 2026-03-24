@@ -24,9 +24,13 @@ body {
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
     padding: 2rem 1rem;
+    padding-top: env(safe-area-inset-top, 2rem);
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -315,4 +319,91 @@ header h1 {
 .interim {
     color: var(--text-muted);
     font-style: italic;
+}
+
+/* PWA Install Banner */
+.install-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    color: white;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease-out;
+}
+
+.install-banner.show {
+    display: flex;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.install-banner .install-text {
+    flex: 1;
+}
+
+.install-banner .install-text strong {
+    display: block;
+    font-size: 0.95rem;
+}
+
+.install-banner .install-text span {
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+.install-banner button {
+    background: white;
+    color: var(--primary);
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.install-banner .dismiss-btn {
+    background: transparent;
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+/* Standalone PWA mode adjustments */
+@media (display-mode: standalone) {
+    body {
+        padding-top: env(safe-area-inset-top, 1rem);
+    }
+    .install-banner {
+        display: none !important;
+    }
+}
+
+/* Mobile touch improvements */
+@media (hover: none) {
+    .mic-btn {
+        width: 80px;
+        height: 80px;
+    }
+    .mic-btn:active {
+        transform: scale(0.95);
+    }
+    .icon-btn:active {
+        background: var(--surface-light);
+    }
+    .swap-btn:active {
+        background: var(--primary);
+    }
 }

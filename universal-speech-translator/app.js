@@ -447,6 +447,41 @@ function updateDetectedLanguage(result) {
 }
 
 // ============================================================
+// PWA Install Prompt
+// ============================================================
+let deferredInstallPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+
+    const banner = document.getElementById('install-banner');
+    const installBtn = document.getElementById('install-btn');
+    const dismissBtn = document.getElementById('dismiss-install');
+
+    banner.classList.add('show');
+
+    installBtn.addEventListener('click', async () => {
+        deferredInstallPrompt.prompt();
+        const result = await deferredInstallPrompt.userChoice;
+        if (result.outcome === 'accepted') {
+            banner.classList.remove('show');
+        }
+        deferredInstallPrompt = null;
+    });
+
+    dismissBtn.addEventListener('click', () => {
+        banner.classList.remove('show');
+    });
+});
+
+window.addEventListener('appinstalled', () => {
+    const banner = document.getElementById('install-banner');
+    banner.classList.remove('show');
+    deferredInstallPrompt = null;
+});
+
+// ============================================================
 // Start the app
 // ============================================================
 init();
