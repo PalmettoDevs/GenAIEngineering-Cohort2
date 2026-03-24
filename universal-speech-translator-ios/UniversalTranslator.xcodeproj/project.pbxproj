@@ -1,0 +1,39 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXGroup section */
+		ROOT_GROUP = {
+			isa = PBXGroup;
+			children = (
+				APP_GROUP,
+			);
+			sourceTree = "<group>";
+		};
+		APP_GROUP = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UniversalTranslator;
+			path = UniversalTranslator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		ROOT_OBJECT = {
+			isa = PBXProject;
+			buildConfigurationList = ROOT_BUILD_CONFIGS;
+			compatibilityVersion = "Xcode 14.0";
+			mainGroup = ROOT_GROUP;
+			productRefGroup = ROOT_GROUP;
+		};
+/* End PBXProject section */
+
+	};
+	rootObject = ROOT_OBJECT;
+}

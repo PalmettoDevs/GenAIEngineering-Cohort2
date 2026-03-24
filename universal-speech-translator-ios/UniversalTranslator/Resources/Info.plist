@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Universal Translator needs microphone access to listen to your speech and translate it in real time.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Universal Translator uses speech recognition to convert your spoken words into text for translation.</string>
+    <key>CFBundleName</key>
+    <string>Universal Translator</string>
+    <key>CFBundleDisplayName</key>
+    <string>Universal Translator</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.translator.universal</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>UILaunchScreen</key>
+    <dict/>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>microphone</string>
+    </array>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+</dict>
+</plist>
